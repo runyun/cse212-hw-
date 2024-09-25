@@ -1,4 +1,6 @@
-﻿public class SimpleQueue {
+﻿using System.Collections;
+
+public class SimpleQueue {
     public static void Run() {
         // Test Cases
 
@@ -47,14 +49,14 @@
         // Defect(s) Found: 
     }
 
-    private readonly List<int> _queue = new();
+    private readonly Queue<int> _queue = new Queue<int>();
 
     /// <summary>
     /// Enqueue the value provided into the queue
     /// </summary>
     /// <param name="value">Integer value to add to the queue</param>
     private void Enqueue(int value) {
-        _queue.Insert(0, value);
+        _queue.Enqueue(value);
     }
 
     /// <summary>
@@ -66,8 +68,7 @@
         if (_queue.Count <= 0)
             throw new IndexOutOfRangeException();
 
-        var value = _queue[1];
-        _queue.RemoveAt(1);
+        var value = _queue.Dequeue();
         return value;
     }
 }
