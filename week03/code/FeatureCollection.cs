@@ -1,5 +1,16 @@
 public class FeatureCollection
 {
-    // TODO Problem 5 - ADD YOUR CODE HERE
-    // Create additional classes as necessary
+    public List<Features> features {get; set;}
+}
+
+public class Features 
+{
+    public TheProperties properties {get; set;}
+}
+
+public class TheProperties
+{
+
+    public string place {get; set;}
+    public double mag {get; set;}
 }
